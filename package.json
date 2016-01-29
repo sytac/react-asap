@@ -1,0 +1,22 @@
+{
+  "name": "react-asap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Davide Fiorello <davide@codeflyer.com> (http://github.com/codeflyer/)",
+  "license": "ISC",
+  "dependencies": {
+    "babelify": "^7.2.0",
+    "browserify-middleware": "^7.0.0",
+    "express": "^4.13.4",
+    "yargs": "^3.32.0"
+  },
+  "bin": {
+    "react-asap": "bin/index.js"
+  },
+  "main" : "./bin/index.js",
+  "preferGlobal": "true"
+}
