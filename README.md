@@ -1,5 +1,5 @@
 # react-asap
-A ready to use react environment for teasting and learning purpose.
+A ready to use react environment for testing and learning purpose.
 
 ## Why?
 Because start to write examples in react is not easy. You have to install webpack or browserify, babel, a web server, etc.
