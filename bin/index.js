@@ -5,6 +5,8 @@ var fs = require('fs');
 var express = require('express');
 var babelify = require('babelify');
 var browserify = require('browserify-middleware');
+var presetEs2015 = require('babel-preset-es2015');
+var presetReact = require('babel-preset-react');
 var argv = require('yargs')
   .usage('Usage: $0 app.js -c [containerName] -p [port]')
   .demand(1)
@@ -20,8 +22,6 @@ console.log('entry point: ' + inputFile);
 console.log('render your react app on the element: document.getElementById(\'' + divName + '\')');
 var app = express();
 
-process.chdir(__dirname);
-
 var indexHtml = '<html><head></head>' +
   '<body><div id="' + divName + '">This is a react container</div></body>' +
   '<script type="text/javascript" src="app.js"></script>' +
@@ -36,7 +36,7 @@ app.listen(3000, function() {
 });
 
 browserify.settings({
-  transform: [babelify.configure({ presets: ["es2015", "react"] })]
+  transform: [babelify.configure({ presets: [presetEs2015, presetReact] })]
 });
 
 app.get('/app.js', browserify(inputFile, { debug: false }));
