@@ -12,21 +12,21 @@ Install react-asap globally.
 npm install -g react-asap
 ```
 
-Create a working area folder
+Create a working area folder:
 
 ```
 mkdir test-my-code
 cd test-my-code
 ```
 
-Install the react packages
+Install the react packages:
 
 ```
 npm install react
 npm install react-dom
 ```
 
-Create a sample app file
+Create a sample app file:
 
 ```javascript
 /* app.js */
@@ -40,6 +40,7 @@ ReactDOM.render(
 ```
 
 Run the application
+
 ```
 react-asap app.js
 ```
@@ -47,7 +48,7 @@ react-asap app.js
 **Open your browser at http://localhost:3000**
 
 ## How it works
-It's a really simple application, it just run a web browser that serve a index html page precompiled
+It's a really simple application, it just runs a web browser that serves a precompiled index html page:
 
 ```
 <html>
@@ -59,7 +60,11 @@ It's a really simple application, it just run a web browser that serve a index h
 </html>
 ```
 
-then serve directly the transpiled version of your app.
+where `app.js` is provided as the transpiled version of your app.
+
+### Features
+
+- automatic code recompilation
 
 ### Params
 
