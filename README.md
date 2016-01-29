@@ -2,7 +2,7 @@
 A ready to use react environment for testing and learning purpose.
 
 ## Why?
-Because start to write examples in react is not easy. You have to install webpack or browserify, babel, a web server, etc.
+Because starting to write examples in react is not easy: you have to install webpack or browserify, babel, a web server, etc. This project should get you started in a matter of seconds.
 
 ## Quickstart
 
@@ -36,7 +36,7 @@ var ReactDOM = require('react-dom');
 ReactDOM.render(
   <h1>Hello, world!</h1>,
   document.getElementById('app')
-);  
+);
 ```
 
 Run the application
@@ -57,7 +57,7 @@ It's a really simple application, it just run a web browser that serve a index h
 </body>
 <script type="text/javascript" src="app.js"></script>
 </html>
-```  
+```
 
 then serve directly the transpiled version of your app.
 
@@ -65,5 +65,4 @@ then serve directly the transpiled version of your app.
 
 -c : the `div` id of the html. (default `app`)
 
--p : the server port (default `3000`) 
- 
+-p : the server port (default `3000`)
