@@ -20,6 +20,8 @@ console.log('entry point: ' + inputFile);
 console.log('render your react app on the element: document.getElementById(\'' + divName + '\')');
 var app = express();
 
+process.chdir(__dirname);
+
 var indexHtml = '<html><head></head>' +
   '<body><div id="' + divName + '">This is a react container</div></body>' +
   '<script type="text/javascript" src="app.js"></script>' +
