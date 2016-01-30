@@ -15,6 +15,7 @@ var argv = require('yargs')
 
 var currentFolder = process.cwd();
 
+var port = argv.port || 3000;
 var divName = argv.container || 'app';
 var inputFile = path.resolve(currentFolder, argv._[0]);
 console.log('react-asap: a ready to use simple react/es6 environment');
@@ -31,8 +32,8 @@ app.get('/', function(req, res) {
   res.send(indexHtml);
 });
 
-app.listen(3000, function() {
-  console.log('Open your browser and type: http://localhost:3000');
+app.listen(port, function() {
+  console.log('Open your browser and type: http://localhost:' + port);
 });
 
 browserify.settings({
