@@ -1,8 +1,25 @@
 # react-asap
-A ready to use react environment for testing and learning purpose.
+A ready to use react command line runner for testing and learning purpose.
 
 ## Why?
 Because starting to write examples in react is not easy: you have to install webpack or browserify, babel, a web server, etc. This project should get you started in a matter of seconds.
+
+
+## What is it?
+It is a command line tool installed globally. Just edit your javascript file and run it wuth.
+
+```
+react-asap index.js
+```
+
+The tool transpile it, bundle and serve it in a index.html container on a localhost port.
+
+It's made to remove from the learning process all the complexity related to the transpiling and bundling of the javascript files.
+
+**THIS IS NOT A BOILERPLATE**
+If you're looking for a complete boilerplate check this:
+
+https://github.com/sytac/react-redux-scaffold
 
 ## Quickstart
 
@@ -62,12 +79,26 @@ It's a really simple application, it just runs a web browser that serves a preco
 
 where `app.js` is provided as the transpiled version of your app.
 
+#### Add a css file
+Using the parameter `-style` is possible to add a stylesheet file to the html.
+
+```
+react-asap index.js -style style.css
+```
+
+```
+react-asap index.js -style https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
+```
+
 ### Features
 
 - automatic code recompilation
+- serve statically the file in the current folder
 
 ### Params
 
--c : the `div` id of the html. (default `app`)
+-c, -container : the `div` id of the html. (default `app`)
 
--p : the server port (default `3000`)
+-p, -port : the server port (default `3000`)
+
+-s, -style : add a css file
