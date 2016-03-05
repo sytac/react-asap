@@ -1,6 +1,6 @@
 {
   "name": "react-asap",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "A ready to use react environment for testing and learning purpose.",
   "main": "./bin/index.js",
   "keywords": [
