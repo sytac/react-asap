@@ -69,7 +69,10 @@ It's a really simple application, it just runs a web browser that serves a preco
 
 ```
 <html>
-<head></head>
+<head>
+#optional CSS
+#optional JS
+</head>
 <body>
   <div id="app">This is a react container</div>
 </body>
@@ -89,6 +92,12 @@ react-asap index.js -style style.css
 ```
 react-asap index.js -style https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
 ```
+#### Add an external js
+Using the parameter `-jsExt` it is possible to add an external js in the head of the document.
+
+```
+react-asap index.js -jsExt https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js
+```
 
 ### Features
 
@@ -102,3 +111,5 @@ react-asap index.js -style https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/b
 -p, -port : the server port (default `3000`)
 
 -s, -style : add a css file
+
+-j -jsExt : add an external js
