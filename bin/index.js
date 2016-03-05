@@ -8,9 +8,10 @@ var browserify = require('browserify-middleware');
 var presetEs2015 = require('babel-preset-es2015');
 var presetReact = require('babel-preset-react');
 var argv = require('yargs')
-  .usage('Usage: $0 app.js -c [containerName] -p [port] -s [cssImport]')
+  .usage('Usage: $0 app.js -c [containerName] -p [port] -s [cssImport] -j [jsExt]')
   .demand(1)
   .alias('s', 'style')
+  .alias('j', 'jsExt')
   .alias('c', 'container')
   .alias('p', 'port').argv;
 
@@ -21,9 +22,12 @@ var divName = argv.container || 'app';
 var inputFile = path.resolve(currentFolder, argv._[0]);
 var app = express();
 
-var cssString = '';
+var headString = '';
 if (argv.style) {
-  cssString = '<link href="' + argv.style + '" rel="stylesheet">';
+  headString += '<link href="' + argv.style + '" rel="stylesheet">';
+}
+if (argv.jsExt) {
+  headString += '  <script src="' + argv.jsExt + '"></script>';
 }
 
 try {
@@ -33,7 +37,7 @@ try {
   process.exit(1);
 }
 
-var indexHtml = '<html><head>' + cssString + '</head>' +
+var indexHtml = '<html><head>' + headString + '</head>' +
   '<body><div id="' + divName + '">This is a react container</div></body>' +
   '<script type="text/javascript" src="app.js"></script>' +
   '</html>';
@@ -41,6 +45,9 @@ var indexHtml = '<html><head>' + cssString + '</head>' +
 console.log('react-asap: a ready to use simple react/es6 environment');
 if (argv.style) {
   console.log('Added style: ' + argv.style);
+}
+if (argv.jsExt) {
+  console.log('Added external js: ' + argv.jsExt);
 }
 console.log('Entry point: ' + inputFile);
 console.log('Render your react app on the element: document.getElementById(\'' + divName + '\')');
@@ -59,4 +66,3 @@ browserify.settings({
 app.get('/app.js', browserify(inputFile, { debug: false }));
 
 app.use(express.static(currentFolder));
-
