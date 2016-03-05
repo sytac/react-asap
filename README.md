@@ -83,20 +83,20 @@ It's a really simple application, it just runs a web browser that serves a preco
 where `app.js` is provided as the transpiled version of your app.
 
 #### Add a css file
-Using the parameter `-style` is possible to add a stylesheet file to the html.
+Using the parameter `--style` is possible to add a stylesheet file to the html.
 
 ```
-react-asap index.js -style style.css
+react-asap index.js --style style.css
 ```
 
 ```
 react-asap index.js -style https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css
 ```
 #### Add an external js
-Using the parameter `-jsExt` it is possible to add an external js in the head of the document.
+Using the parameter `--jsExt` it is possible to add an external js in the head of the document.
 
 ```
-react-asap index.js -jsExt https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js
+react-asap index.js --jsExt https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js
 ```
 
 ### Features
@@ -106,10 +106,10 @@ react-asap index.js -jsExt https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/j
 
 ### Params
 
--c, -container : the `div` id of the html. (default `app`)
+-c, --container : the `div` id of the html. (default `app`)
 
--p, -port : the server port (default `3000`)
+-p, --port : the server port (default `3000`)
 
--s, -style : add a css file
+-s, --style : add a css file
 
--j -jsExt : add an external js
+-j --jsExt : add an external js
